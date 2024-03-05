@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/tourist-boilerplate-main/assets/img/logo/1-removebg-preview.png">
+    <title>InsideNBA</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">insideNBA</div>
+        <ul data-aos="fade-down" data-aos-duration="800">
+          <li><a href="index.html" style="text-decoration:none; letter-spacing: 3px; font-weight: 300; font-size: 16px; color: #fff;">Home</a></li>
+          <li><a href="news.html"  style="text-decoration:none; letter-spacing: 3px; font-weight: 300; font-size: 16px; color: #fff;">News</a></li>
+          <li><a href="about.html"  style="text-decoration:none; letter-spacing: 3px; font-weight: 300; font-size: 16px; color: #fff;">About</a></li>
+          <li><a href="news.html"  style="text-decoration:none; letter-spacing: 3px; font-weight: 300; font-size: 16px; color: #fff;">Contact</a></li>
+        </ul>
+      </div>
+      <div
+        class="banner"
+        style="background-image: url('./assets/img/mayon/1.jpg')"
+      >
+        <div
+          class="glass-wrapper"
+          data-aos="fade-right"
+          data-aos-delay="300"
+          data-aos-duration="800"
+        ></div>
+      </div>
+      <div class="hero-title">
+        <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">
+          Latest NBA
+        </p>
+        <p
+          class="country"
+          class="country"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-duration="700"
+        >
+          News
+        </p>
+        <div
+          class="details"
+          class="details"
+          data-aos="fade-left"
+          data-aos-delay="700"
+          data-aos-duration="700"
+        >
+        Score Big with the Latest NBA News: Dribbling through Breaking Stories, Assisting Updates, and Slam-Dunk Insights – Your Courtside Pass to Hoops Hype!
+        </div>
+      </div>
+      <div class="tourist-list">
+        <ul class="place-list">
+          <li
+            class="active"
+            data-aos="fade-down"
+            data-aos-delay="600"
+            data-aos-duration="700"
+            data-img="./assets/img/mayon/1.jpg"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/mayon/1.jpg')"
+            >
+            <div class="details">
+              <a href="https://youtu.be/Eg0mxPXIpLY?si=DdWZkDEodqy44PsG" style="text-decoration:none;"><p class="province">Lakers</p></a> 
+              <a href="https://youtu.be/Eg0mxPXIpLY?si=DdWZkDEodqy44PsG" style="text-decoration:none;"> <p class="place-name">Farewell Kobe</p></a>
+             </div>
+            </div>
+          </li>
+          <li
+            data-img="./assets/img/bohol/steph.jpg"
+            data-aos="fade-down"
+            data-aos-delay="750"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/bohol/steph.jpg')"
+            >
+            <div class="details">
+              <a href="https://youtu.be/dbf-xGWJ4wA?si=5_md6jljIDFu0Bw3" style="text-decoration:none;"><p class="province">Warriors</p></a> 
+              <a href="https://youtu.be/dbf-xGWJ4wA?si=5_md6jljIDFu0Bw3" style="text-decoration:none;"><p class="place-name">Curry Experience</p></a> 
+            </div>
+            </div>
+          </li>
+          <li
+            data-img="./assets/img/palawan/lebron.jpg"
+            data-aos="fade-down"
+            data-aos-delay="850"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/palawan/lebron.jpg')"
+            >
+            <div class="details">
+              <a href="https://youtu.be/S9BwjJ6PfYs?si=y_vVLkCRibSGT5l_" style="text-decoration:none;"><p class="province">Lakers</p></a> 
+              <a href="https://youtu.be/S9BwjJ6PfYs?si=y_vVLkCRibSGT5l_" style="text-decoration:none;"> <p class="place-name">Goaty Lebron?</p></a>
+            </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <style></style>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    let places = document.querySelectorAll(".place-list li");
+    let active = "/assets/img/mayon/mayon-1.webp";
+
+    places.forEach((e) => {
+      e.addEventListener("mouseenter", (event) => {
+        places.forEach((e) => {
+          e.classList.remove("active");
+        });
+
+        event.target.classList.add("active");
+        active = event.target.getAttribute("data-img");
+        let banner = document.querySelector(".banner");
+        banner.style.backgroundImage = `url('${active}')`;
+      });
+    });
+  </script>
+</html>
